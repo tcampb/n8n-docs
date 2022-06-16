@@ -12,7 +12,7 @@ Create a [Calendly](https://www.calendly.com/) premium account.
 
 1. Open your Calendly dashboard.
 2. Click on "Integrations".
-3. Click on the "API and webhooks" tile.
+3. Click on the **API and webhooks** tile.
 4. Click the "Get a token now" link in the "Personal access tokens" section.
 
 ![Getting Calendly credentials](/_images/integrations/credentials/calendly/using-access-token.gif)
