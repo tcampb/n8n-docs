@@ -1,3 +1,7 @@
+---
+description: CLI commands available in n8n.
+---
+
 # CLI commands for n8n
 
 n8n includes a CLI (command line interface), allowing you to perform many common actions using the CLI rather than the n8n editor. These include starting workflows, and exporting and importing workflows and credentials.
@@ -14,9 +18,9 @@ You can use CLI commands with self-hosted n8n. Depending on how you choose to in
     # Mac
     /Users/<username>/Desktop/n8n.app/Contents/Resources/app/node_modules/n8n/bin/n8n export:workflow --all
     ```
-* Docker: the `n8n` command is available within your Docker container. For example:
+* Docker: the `n8n` command is available within your Docker container:
     ```sh
-    docker exec -it <n8n-container-name> n8n export:workflow --all
+    docker exec -u node -it <n8n-container-name> <n8n-cli-command>
     ```
 
 ## Start a workflow
@@ -37,6 +41,10 @@ n8n execute --file <WORKFLOW_FILE>
 ## Change the active status of a workflow
 
 You can change the active status of a workflow using the CLI.
+
+!!! note "Restart required"
+    These commands operate on your n8n database. If you execute them
+	while n8n is running, the changes don't take effect until you restart n8n.
 
 Set the active status of a workflow by its ID to false:
 

@@ -13,7 +13,7 @@ The first thing you need to do is get data from ABCorp's old data warehouse.
 
 In the previous chapter, you used a regular node for a specific app (YCombinator). However, not all apps or services have dedicated nodes – like the legacy data warehouse from Nathan's company.
 
-Though it's not possible to directly export the data, the data warehouse has a couple of API endpoints. That's all we need to access the data via the [***HTTP Request node***](/integrations/core-nodes/n8n-nodes-base.httpRequest/){:target="_blank" .external} in n8n.
+Though it's not possible to directly export the data, the data warehouse has a couple of API endpoints. That's all we need to access the data via the [***HTTP Request node***](/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/){:target="_blank" .external} in n8n.
 
 !!! note "No node for that service?"
     The *HTTP Request node* is one of the most versatile nodes, allowing you to make HTTP requests which can be used to query data from apps and services. You can use it to access data from apps or services that don't have a dedicated node in n8n.
@@ -26,12 +26,10 @@ Now, in your Editor UI, add an *HTTP Request node* like you learned in the lesso
 In the left panel, select:
 
 - *URL:* The Dataset URL your received in the email when you signed up for this course.
-- *Options > Add Option > Split Into Items:* toggle to true.<br/>
-	This option will output each element of an array as its own item.
 - *Headers > Add Header:*
   - *Name:* `unique_id`
   - *Value:* The Unique ID your received in the email when you signed up for this course.
-- *Authentication:* Header Auth<br/>
+- *Authentication > Generic Credential Type > Generic Auth Type:* Header Auth<br/>
     This option requires credentials to allow you to access the data.
 
 !!! note "Credentials"

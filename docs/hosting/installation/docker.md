@@ -19,14 +19,10 @@ Before proceeding ensure that you have installed [Docker Desktop](https://docs.d
 From your terminal, run:
 
 ```sh
-docker run -it --rm \
-	--name n8n \
-	-p 5678:5678 \
-	-v ~/.n8n:/home/node/.n8n \
-	n8nio/n8n
+docker run -it --rm	--name n8n -p 5678:5678	-v ~/.n8n:/home/node/.n8n	n8nio/n8n
 ```
 
-This command will download all required n8n images and start your container, exposed on port `5678`. So that all your data is not lost when you stop the container, it also mounts a local directory, `.n8n`, to persist your data locally.
+This command will download all required n8n images and start your container, exposed on port `5678`. To save your work between container restarts, it also mounts a local directory, `.n8n`, to persist your data locally.
 
 You can then access n8n by opening:
 [http://localhost:5678](http://localhost:5678)
@@ -108,7 +104,7 @@ docker run -it --rm \
 
 ## Further reading
 
-More information about Docker setup can be found in the README file of the [Docker Image](https://github.com/n8n-io/n8n/blob/master/docker/_images/n8n/).
+More information about Docker setup can be found in the README file of the [Docker Image](https://github.com/n8n-io/n8n/tree/master/docker/images/n8n).
 
 
 

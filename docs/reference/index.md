@@ -1,4 +1,8 @@
-# Overview
+---
+description: Release notes, keyboard shortcuts, CLI commands, and other reference information.
+---
+
+# Reference
 
 This section provides reference information about n8n, including:
 

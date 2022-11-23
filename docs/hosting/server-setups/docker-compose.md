@@ -103,6 +103,7 @@ services:
       - traefik.http.middlewares.n8n.headers.SSLHost=${DOMAIN_NAME}
       - traefik.http.middlewares.n8n.headers.STSIncludeSubdomains=true
       - traefik.http.middlewares.n8n.headers.STSPreload=true
+      - traefik.http.routers.n8n.middlewares=n8n@docker
     environment:
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER
@@ -117,7 +118,7 @@ services:
       - ${DATA_FOLDER}/.n8n:/home/node/.n8n
 ```
 
-If you are planning on reading/writing local files with n8n (for example, by using the [*Write Binary File* node](/integrations/core-nodes/n8n-nodes-base.writeBinaryFile/), you will need to configure a data directory for those files here. If you are running n8n as a root user, add this under `volumes` for the n8n service:
+If you are planning on reading/writing local files with n8n (for example, by using the [*Write Binary File* node](/integrations/builtin/core-nodes/n8n-nodes-base.writebinaryfile/), you will need to configure a data directory for those files here. If you are running n8n as a root user, add this under `volumes` for the n8n service:
 
 ```yaml
       - /local-files:/files
@@ -197,3 +198,6 @@ n8n will now be reachable via the above defined subdomain + domain combination.
 The above example would result in: https://n8n.example.com
 
 n8n will only be reachable via `https` and not via `http`.
+
+!!! warning "Secure your n8n instance"
+    Make sure that you [secure](/hosting/security/) your n8n instance.
